@@ -16,7 +16,7 @@
 
 ```bash
 docker run -d -p 27017:27017 --name mongodb mongo
-```bash
+```
 
 ## 2. mongo db操作相關文件 放在 Doc中
 
