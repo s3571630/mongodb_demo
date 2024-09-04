@@ -16,9 +16,12 @@
 
 ```bash
 docker run -d -p 27017:27017 --name mongodb mongo
+```bash
 
 ## 2. mongo db操作相關文件 放在 Doc中
+
 ## 3 如果懶得執行只想看程式寫法也ok，這邊提供三種mongo操作方式 
-### 1. 物件操作方式(Demos/OrmQuery.cs)
-### 2. BSON操作方式 (Demos/AggregateQuery.cs)
-### 3. dynamic 操作方式(Program.cs => 其他查詢範例)
+
+物件操作方式(Demos/OrmQuery.cs)<br>
+BSON操作方式 (Demos/AggregateQuery.cs)<br>
+dynamic 操作方式(Program.cs => 其他查詢範例)<br>
