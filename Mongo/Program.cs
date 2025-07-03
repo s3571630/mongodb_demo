@@ -18,7 +18,7 @@ namespace Mongo
 {
     public class Program
     {
-        private static Config config = new Config();
+        //private static Config config = new Config();
         private static MongoClient? mongoClient;
         private static IMongoDatabase? TestDB;
         private static MongoSchemaManager? SchemaManager;
@@ -26,8 +26,10 @@ namespace Mongo
 
         static async Task Main(string[] args)
         {
+            //Console.WriteLine($"連線字串：{config.appSettings.Mongo.ConnectionString}");
 
-            mongoClient = new MongoClient(config.appSettings.Mongo.ConnectionString);
+            var mongoConn = Environment.GetEnvironmentVariable("Mongo__ConnectionString");
+            mongoClient = new MongoClient(mongoConn);
 
             // 取得資料庫 (若不存在則會自動建立)
             TestDB = mongoClient.GetDatabase("TestDB");

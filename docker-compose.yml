@@ -1,0 +1,14 @@
+services:
+  csharp_pratice_mongo:
+    image: ${DOCKER_REGISTRY-}mongo
+    build:
+      context: .
+      dockerfile: Mongo/Dockerfile
+    networks:
+      - dev-network
+  csharp_pratice_mongodb:
+    image: mongodb/mongodb-community-server:5.0-ubi8
+    networks:
+      - dev-network
+networks:
+    dev-network:

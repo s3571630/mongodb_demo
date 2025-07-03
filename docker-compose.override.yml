@@ -1,0 +1,31 @@
+services:
+  csharp_pratice_mongo:
+    image: ${DOCKER_REGISTRY-}mongo
+    container_name: csharp_pratice_mongo    
+    build:
+      context: .
+      dockerfile: Mongo/Dockerfile
+    environment:
+      - RUNNING_IN_DOCKER=true
+      - Mongo__ConnectionString=${MONGODB_CONN_STR}
+    #volumes:
+    #- ./Mongo/appsettings.json:/app/appsettings.json:ro     
+    networks:
+      - dev-network
+  csharp_pratice_mongodb:
+    image: mongodb/mongodb-community-server:5.0-ubi8
+    container_name: csharp_pratice_mongodb
+    env_file: .env
+    ports:
+      - "37020:27017"
+    environment:
+      MONGODB_INITDB_ROOT_USERNAME: ${MONGODB_INITDB_ROOT_USERNAME}
+      MONGODB_INITDB_ROOT_PASSWORD: ${MONGODB_INITDB_ROOT_PASSWORD}
+    volumes:
+      - ./databackup/mongo_data/data/db:/data/db
+      - ./databackup/mongo_data/data/configdb:/data/configdb    
+    networks:
+      - dev-network
+
+networks:
+    dev-network:

@@ -12,11 +12,8 @@
 
 ### 1.2 啟動 MongoDB Docker 容器
 
-使用以下命令啟動 MongoDB 容器，並將預設的 27017 埠號（port）映射到主機的 27017 埠號：
+直接執行專案即可執行docker compose
 
-```bash
-docker run -d -p 27017:27017 --name mongodb mongo
-```
 
 ## 2. mongo db操作相關文件 放在 Doc中
 
