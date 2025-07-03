@@ -12,7 +12,7 @@
 
 ### 1.2 啟動 MongoDB Docker 容器
 
-直接用vistual studio執行執行docker compose即可啟動
+直接開啟vistual studio .sln選docker compose執行即可啟動
 
 
 ## 2. mongo db操作相關文件 放在 Doc中
